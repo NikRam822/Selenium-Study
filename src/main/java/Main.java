@@ -30,16 +30,13 @@ public class Main {
         System.out.println(button.getText());//Вывод текста из атрибута
 
 
-
         driver.get("https://google.com");
         WebElement input = driver.findElement(By.xpath("//input[@aria-label='Найти']"));
         input.sendKeys("Летов", Keys.ENTER);//Ввод текста и поиск. Вместо текста можно передать путь к файлу
         //input.clear();//очистить поле ввода
 
 
-
-
-       // Actions actions =new Actions();
+        // Actions actions =new Actions();
         /*actions.contextClick()//Клик правой кнопкой мыши
 
         actions.moveToElement()//навести на какой-то элемент
@@ -47,14 +44,14 @@ public class Main {
         actions.keyUp()//нажали отпустили клавишу
         actions.clickAndHold()//нажать и удержать
         actions.release()//отпустить при удержании
-actions.dragAndDropBy(element,100,100)//смещение элемента по  x на 100 и по y на 100
-actions.pause()//задержки в действии
+        actions.dragAndDropBy(element,100,100)//смещение элемента по  x на 100 и по y на 100
+        actions.pause()//задержки в действии
         actions.build()//собрать все действия выше в одно
         actions.perform();//применить все действия выше*/
-            driver.get("https://mrdoob.com/projects/chromeexperiments/google-space/");
-            WebElement element1 = driver.findElement(By.xpath("//img"));
-            WebElement element2 = driver.findElement(By.xpath("//a [contains(text(),'Advertising Programs')]"));
-            Actions actions =new Actions(driver);
+        driver.get("https://mrdoob.com/projects/chromeexperiments/google-space/");
+        WebElement element1 = driver.findElement(By.xpath("//img"));
+        WebElement element2 = driver.findElement(By.xpath("//a [contains(text(),'Advertising Programs')]"));
+        Actions actions = new Actions(driver);
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
