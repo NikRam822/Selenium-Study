@@ -47,7 +47,8 @@ public class Main {
         actions.keyUp()//нажали отпустили клавишу
         actions.clickAndHold()//нажать и удержать
         actions.release()//отпустить при удержании
-
+actions.dragAndDropBy(element,100,100)//смещение элемента по  x на 100 и по y на 100
+actions.pause()//задержки в действии
         actions.build()//собрать все действия выше в одно
         actions.perform();//применить все действия выше*/
             driver.get("https://mrdoob.com/projects/chromeexperiments/google-space/");
