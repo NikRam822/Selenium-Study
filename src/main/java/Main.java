@@ -55,7 +55,13 @@ actions.pause()//задержки в действии
             WebElement element1 = driver.findElement(By.xpath("//img"));
             WebElement element2 = driver.findElement(By.xpath("//a [contains(text(),'Advertising Programs')]"));
             Actions actions =new Actions(driver);
-            actions.moveToElement(element1).clickAndHold().moveToElement(element2).build().perform();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        actions.moveToElement(element1).clickAndHold().moveToElement(element2).build().perform();
 
     }
 }
