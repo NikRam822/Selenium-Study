@@ -9,17 +9,30 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nikita\\Documents\\DEV\\chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
 
-        driver.get("https://google.com");
+        driver.get("https://web.telegram.org/k/");
 
-
-        WebElement element = driver.findElement(By.xpath("//*[@id='gb']/div/div[1]/div/div[1]/a"));//взять элемент
+Thread.sleep(6000);
+        WebElement element = driver.findElement(By.xpath("//*[@id=\"auth-pages\"]/div/div[2]/div[2]/div/div[2]/button[2]/div"));//взять элемент
         element.click();
-
+        Thread.sleep(2000);
+        element = driver.findElement(By.xpath("//*[@id=\"auth-pages\"]/div/div[2]/div[2]/div/div[2]/button/div"));//взять элемент
+        element.click();
+        Thread.sleep(2000);
+        element=driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[1]/div/div[3]/div[2]/div[1]"));
+        element.sendKeys("9126839293", Keys.ENTER);
         WebElement button = (new WebDriverWait(driver, Duration.ofSeconds(10))).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(),'Для бизнеса')]")));// явное ожидание
+Thread.sleep(20000);
+try {
+    element=driver.findElement(By.xpath("#folders-container > div > div.chatlist-top > ul > li:nth-child(5) > div.c-ripple"));
+    element.click();
+}catch (Exception e){
+    System.out.println("loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooox\nddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+}
+
 
 
         System.out.println(button.getAttribute("baseURI"));//Работа с properties атрибута
